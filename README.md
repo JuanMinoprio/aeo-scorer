@@ -8,7 +8,7 @@ Built by [Juan Minoprio](https://www.linkedin.com/in/juanminoprio/) — marketer
 
 ## What It Scores
 
-6 dimensions, 100 points total:
+6 dimensions, 100 points total. The rubric is locked and calibrated against **37 cited 2026 studies** on what Google AI Overviews, ChatGPT, Perplexity, and Bing Copilot actually reward when picking citation candidates — each engine weights signals differently (Google AIO weights structure higher; Perplexity weights authority higher), and the score reflects that.
 
 | Dimension | Points | What It Checks |
 |---|---|---|
@@ -79,7 +79,7 @@ Search is shifting. AI engines don't rank pages — they extract passages and sy
 
 ## More Tools
 
-This skill is part of a growing Claude Code toolkit for marketers:
+This skill is part of the free **[Marketing Toolkit](https://github.com/JuanMinoprio/marketing-toolkit)** for Claude Code:
 
 - **[Hook Lab](https://github.com/JuanMinoprio/hook-lab)** — Test a LinkedIn hook 20 ways with a 5-persona AI jury
 - **[Advisory Board](https://github.com/JuanMinoprio/advisory-board)** — 6-persona AI advisory board for strategic decisions
