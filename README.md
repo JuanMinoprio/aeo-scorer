@@ -30,7 +30,7 @@ Built by [Juan Minoprio](https://www.linkedin.com/in/juanminoprio/) — marketer
 Requires [Claude Code](https://claude.ai/code) to be installed.
 
 ```bash
-mkdir -p ~/.claude/commands && curl -o ~/.claude/commands/aeo-scorer.md https://raw.githubusercontent.com/EagleJD08/aeo-scorer/main/aeo-scorer.md
+mkdir -p ~/.claude/commands && curl -o ~/.claude/commands/aeo-scorer.md https://raw.githubusercontent.com/JuanMinoprio/aeo-scorer/main/aeo-scorer.md
 ```
 
 > **Windows users**: This command works in WSL or Git Bash. For a manual install, download `aeo-scorer.md` and copy it to `%USERPROFILE%\.claude\commands\`.
@@ -81,8 +81,8 @@ Search is shifting. AI engines don't rank pages — they extract passages and sy
 
 This skill is part of a growing Claude Code toolkit for marketers:
 
-- **[Hook Lab](https://github.com/EagleJD08/hook-lab)** — Test a LinkedIn hook 20 ways with a 5-persona AI jury
-- **[Advisory Board](https://github.com/EagleJD08/advisory-board)** — 6-persona AI advisory board for strategic decisions
+- **[Hook Lab](https://github.com/JuanMinoprio/hook-lab)** — Test a LinkedIn hook 20 ways with a 5-persona AI jury
+- **[Advisory Board](https://github.com/JuanMinoprio/advisory-board)** — 6-persona AI advisory board for strategic decisions
 
 ---
 
