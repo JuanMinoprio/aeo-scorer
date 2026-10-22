@@ -133,7 +133,7 @@ Nothing in this repo needs an API key, token, or account. The skill runs inside 
 
 I'm Juan Minoprio. I build AI tools and workflows for marketing teams: systems like this one, scoped to your stack, your data, and your compliance rules.
 
-**[Start a conversation](https://juanminoprio.com/?utm_source=github&utm_medium=readme&utm_campaign=aeo-scorer#contact)** or email hello@juanminoprio.com.
+**[Start a conversation](https://juanminoprio.com/inquire?utm_source=github&utm_medium=readme&utm_campaign=aeo-scorer)** or email hello@juanminoprio.com.
 
 ---
 
