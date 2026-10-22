@@ -70,7 +70,7 @@ node cli/aeo-score.ts --min 45 drafts/*.md     # exit 1 if any draft scores belo
 curl -s https://example.com/post | node cli/aeo-score.ts -   # score HTML from stdin
 ```
 
-Run `node cli/aeo-score.ts --help` for every flag. Tests: `npm test`.
+Markdown front-matter dates (`date:`, `updated:`) count toward freshness, and full HTML pages are stripped of nav, footer, and scripts before scoring, the same way the web tool does it. Run `node cli/aeo-score.ts --help` for every flag. Tests: `npm test`.
 
 ---
 
