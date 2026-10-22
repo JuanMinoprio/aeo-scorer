@@ -1,0 +1,10 @@
+{
+  "name": "aeo-scorer",
+  "version": "1.1.0",
+  "description": "Score content on a 6-dimension, 100-point AEO rubric with anti-gaming checks and top-3 fixes.",
+  "author": { "name": "Juan Minoprio", "url": "https://juanminoprio.com" },
+  "homepage": "https://github.com/JuanMinoprio/aeo-scorer",
+  "repository": "https://github.com/JuanMinoprio/aeo-scorer",
+  "license": "MIT",
+  "keywords": ["aeo", "geo", "seo", "content", "marketing"]
+}

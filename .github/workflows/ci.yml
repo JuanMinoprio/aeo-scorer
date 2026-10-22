@@ -1,0 +1,27 @@
+name: ci
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Engine and CLI tests
+        run: npm test
+      - name: Skill copies match
+        # aeo-scorer.md (curl install) and the plugin SKILL.md must stay identical.
+        run: cmp aeo-scorer.md plugins/aeo-scorer/skills/aeo-scorer/SKILL.md
+      - name: Plugin manifests are valid JSON
+        run: |
+          for f in .claude-plugin/marketplace.json plugins/*/.claude-plugin/plugin.json; do
+            node -e "JSON.parse(require('fs').readFileSync('$f','utf8'))" || { echo "invalid: $f"; exit 1; }
+          done
