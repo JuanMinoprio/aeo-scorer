@@ -27,13 +27,50 @@ Built by [Juan Minoprio](https://www.linkedin.com/in/juanminoprio/) — marketer
 
 ## Install (30 seconds)
 
-Requires [Claude Code](https://claude.ai/code) to be installed.
+Requires [Claude Code](https://claude.ai/code). Pick one.
 
-```bash
-mkdir -p ~/.claude/commands && curl -o ~/.claude/commands/aeo-scorer.md https://raw.githubusercontent.com/JuanMinoprio/aeo-scorer/main/aeo-scorer.md
+**Option A: plugin (recommended, gets updates)**
+
+```
+/plugin install aeo-scorer --marketplace JuanMinoprio/aeo-scorer
 ```
 
-> **Windows users**: This command works in WSL or Git Bash. For a manual install, download `aeo-scorer.md` and copy it to `%USERPROFILE%\.claude\commands\`.
+On Claude Code older than 2.1.275, use two steps instead:
+
+```
+/plugin marketplace add JuanMinoprio/aeo-scorer
+/plugin install aeo-scorer@aeo-scorer
+```
+
+Run it as `/aeo-scorer:aeo-scorer`.
+
+**Option B: single command file**
+
+```bash
+mkdir -p ~/.claude/commands && curl -fsSL -o ~/.claude/commands/aeo-scorer.md https://raw.githubusercontent.com/JuanMinoprio/aeo-scorer/main/aeo-scorer.md
+```
+
+Run it as `/aeo-scorer`.
+
+> **Windows users**: Option B works in WSL or Git Bash. For a manual install, download `aeo-scorer.md` and copy it to `%USERPROFILE%\.claude\commands\`.
+
+---
+
+## Offline CLI (no Claude, no API key)
+
+The repo also ships the deterministic rule engine that powers the [web scorer](https://juanminoprio.com/tools/aeo-scorer?utm_source=github&utm_medium=readme&utm_campaign=aeo-scorer). It covers 73 of the 100 points (everything that doesn't need LLM judgment), runs in milliseconds, and makes zero network calls. Use it to score a folder of drafts or to gate content in CI.
+
+Requires Node.js 22.18 or later. No `npm install` step: there are no dependencies.
+
+```bash
+git clone https://github.com/JuanMinoprio/aeo-scorer && cd aeo-scorer
+node cli/aeo-score.ts path/to/post.md          # human-readable report
+node cli/aeo-score.ts --json drafts/*.md       # machine-readable
+node cli/aeo-score.ts --min 45 drafts/*.md     # exit 1 if any draft scores below 45/73
+curl -s https://example.com/post | node cli/aeo-score.ts -   # score HTML from stdin
+```
+
+Markdown front-matter dates (`date:`, `updated:`) count toward freshness, and full HTML pages are stripped of nav, footer, and scripts before scoring, the same way the web tool does it. Run `node cli/aeo-score.ts --help` for every flag. Tests: `npm test`.
 
 ---
 
@@ -86,6 +123,20 @@ This skill is part of the free **[Marketing Toolkit](https://github.com/JuanMino
 
 ---
 
+## Privacy and secrets
+
+Nothing in this repo needs an API key, token, or account. The skill runs inside your own Claude Code session, and the CLI never touches the network. If you fork it and add an integration that does need a key, keep it in a local `.env` file: `.gitignore` already blocks `.env` files from being committed.
+
+---
+
+## Want this built for your team?
+
+I'm Juan Minoprio. I build AI tools and workflows for marketing teams: systems like this one, scoped to your stack, your data, and your compliance rules.
+
+**[Start a conversation](https://juanminoprio.com/inquire?utm_source=github&utm_medium=readme&utm_campaign=aeo-scorer)** or email hello@juanminoprio.com.
+
+---
+
 ## License
 
-MIT. Use it, fork it, build on it.
+MIT. Use it, fork it, build on it. See [LICENSE](./LICENSE).

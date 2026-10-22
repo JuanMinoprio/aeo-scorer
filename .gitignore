@@ -1,0 +1,9 @@
+# Secrets: this repo needs none. Never commit local env files.
+.env
+.env.*
+!.env.example
+
+# Local scoring output and OS noise
+node_modules/
+*.log
+.DS_Store
